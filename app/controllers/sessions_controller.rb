@@ -12,4 +12,9 @@ class SessionsController < ApplicationController
       redirect_to sign_in_users_path, notice: '登入失敗!'
     end
   end
+  
+  def destroy
+    session[:user9527] = nil
+    redirect_to root_path, notice: '已登出!'
+  end
 end

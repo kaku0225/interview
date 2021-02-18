@@ -1,0 +1,5 @@
+@products.find_each do |product|
+  table
+    tr
+      td = product.name
+      td = "Note: <br> #{product.note}".html_safe

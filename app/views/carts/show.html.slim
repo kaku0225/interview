@@ -1,0 +1,5 @@
+@cart.cart_items.find_each do |item|
+  table
+    tr
+      td=item.name
+      td=item.stock.value

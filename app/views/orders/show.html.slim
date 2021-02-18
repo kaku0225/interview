@@ -1,0 +1,10 @@
+table
+  tr
+    td=@order.id
+    td=@order.email
+
+@order.items.map do |item|
+  table
+    tr
+      td=item.name
+      td=item.quantity

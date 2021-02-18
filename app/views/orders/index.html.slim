@@ -1,0 +1,5 @@
+@orders.find_each do |order|
+  table
+    tr
+      td=order.id
+      td=order.create_at

@@ -2,7 +2,7 @@ class User < ApplicationRecord
   before_create :encrypt_password
 
   has_one :cart
-  has_one :orders
+  has_one :order
   has_many :fav_products
 
   validates :email, presence: true, uniqueness: true, format: { with: /[\w]+@([\w-]+\.)+[\w-]{2,4}/ }

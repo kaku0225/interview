@@ -1,16 +1,16 @@
 class OrdersController < ApplicationController
   before_action :session_required
-  before_action :find_cart, only: :create_order
+  before_action :find_cart, only: :create
 
-  def my_orders
+  def index
     @orders = current_user.orders
   end
 
-  def my_order_detail
+  def show
     @order = Order.find_by(id: params[:order_id])
   end
 
-  def create_order
+  def create
     @order = current_user.create_order(
       items: @cart.items,
       email: current_user.email

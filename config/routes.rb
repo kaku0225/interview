@@ -12,19 +12,19 @@ Rails.application.routes.draw do
   end
 
   resource :carts, controller: 'carts', only: [] do
-    get '/my_cart', action: 'my_cart'
-    post '/add_to_cart', action: 'add_to_cart'
+    get '/my_cart', action: 'show'
+    post '/add_to_cart', action: 'create'
   end
 
   resource :favorites, controller: 'favorites', only: [] do
-    get '/my_fav_products', action: 'my_fav_products'
-    post '/add_fav_products', action: 'add_fav_products'
+    get '/my_fav_products', action: 'show'
+    post '/add_fav_products', action: 'create'
   end
 
   resource :orders, controller: 'orders', only:[] do
-    get '/my_orders', action: 'my_orders'
-    get '/my_order_detail', action: 'my_order_detail'
-    post '/create_order', action: 'create_order'
+    get '/my_orders', action: 'index'
+    get '/my_order_detail', action: 'show'
+    post '/create_order', action: 'create'
   end
   
 end

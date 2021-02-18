@@ -1,11 +1,11 @@
 class FavoritesController < ApplicationController
   before_action :session_required
 
-  def my_fav_products
+  def index
     @products = current_user.fav_products
   end
 
-  def add_fav_products
+  def create
     current_user.fav_products.create(product_id: params[:id], note: note_params[:note])
     @note = note_params[:note]
   end

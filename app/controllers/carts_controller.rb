@@ -1,12 +1,12 @@
 class CartsController < ApplicationController
   before_action :session_required
-  before_action :find_cart, only: :my_cart
-  before_action :find_product, only: :add_to_cart
-  before_action :current_cart, only: :add_to_cart
+  before_action :find_cart, only: :show
+  before_action :find_product, only: :create
+  before_action :current_cart, only: :create
 
-  def my_cart; end
+  def show; end
 
-  def add_to_cart
+  def create
     # stock = (@product.stock.value - cart_params[:number].to_i)
     # @product.stock.update(value: stock)
     @stock.update(value: @stock.value - cart_params[:number].to_i)

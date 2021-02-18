@@ -15,25 +15,25 @@ class CartsController < ApplicationController
 
   private
 
-  def find_cart
-    @cart = current_user.cart || current_user.build_cart
-    # @cart = Cart.find_by(id: params[:id])
-  end
+    def find_cart
+      @cart = current_user.cart || current_user.build_cart
+      # @cart = Cart.find_by(id: params[:id])
+    end
 
-  # def find_product
-  #   @product = Product.find_by(id: params[:product_id])
-  # end
+    # def find_product
+    #   @product = Product.find_by(id: params[:product_id])
+    # end
 
-  def find_stock
-    @stock = Stock.find_by!(product_id: params[:product_id])
-  end
+    def find_stock
+      @stock = Stock.find_by!(product_id: params[:product_id])
+    end
 
-  def current_cart
-    @cart ||= Cart.first_or_create(user_id: current_user.id)
-  end
+    def current_cart
+      @cart ||= Cart.first_or_create(user_id: current_user.id)
+    end
 
-  # params = { 'number' => 2 }
-  def cart_params
-    params.permit(:number)
-  end
+    # params = { 'number' => 2 }
+    def cart_params
+      params.permit(:number)
+    end
 end
